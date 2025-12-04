@@ -1,0 +1,11 @@
+.List input{
+    width: 100%;
+    padding:15px 5px;
+    border:none;
+    border-bottom: 1px solid #6495ed;
+}
+
+.List input:focus{
+    outline:none;
+    border-bottom: 1px soild lightseagreen;
+}
