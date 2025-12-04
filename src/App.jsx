@@ -8,15 +8,11 @@ function App() {
 
   return (
     <>
-      <section>
-        <Header/>
-      </section>
-      <section>
-        <Editor/>
-      </section>
-      <section>
-        <List/>
-      </section>
+      <div className='App'>
+          <Header/>
+          <Editor/>
+          <List/>
+      </div>
     </>
   )
 }

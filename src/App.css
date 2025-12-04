@@ -1,13 +1,7 @@
-section{
-  padding: 20px;
+.App{
+  width: 500px;
   margin: 0 auto;
-  width: 400px;
-}
-
-body{
-  padding-top:40px;
-}
-
-input{
-  width: 300px
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
