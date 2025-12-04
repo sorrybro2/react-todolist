@@ -18,3 +18,8 @@
     background-color:#6495ed;
     color:white;
 }
+
+.Editor input:focus{
+    border: 1px solid lightskyblue;
+    outline: none;
+}
