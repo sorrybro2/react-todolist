@@ -1,16 +1,47 @@
 import './App.css'
+import { useState } from 'react'
 import Header from './components/Header'
 import Editor from './components/Editor'
 import List from './components/List'
 
+const mockData = [
+  {
+    id: 0,
+    isCheck: false,
+    content: "빨래하기",
+    date: new Date().getTime(),
+  },
+  {
+    id: 1,
+    isCheck: false,
+    content: "사놓은 인강보기",
+    date: new Date().getTime(),
+  },
+  {
+    id: 2,
+    isCheck: false,
+    content: "병원가기",
+    date: new Date().getTime(),
+  },
+]
+
 function App() {
+  const [todo, setTodo] = useState(mockData);
+  const onCreate =(content)=>{
+    const newTodo = {
+      id:0,
+      isCheck: false,
+      content: content,
+      date: new Date().getTime()
+    }
 
-
+    setTodo([newTodo, ...todo])
+  }
   return (
     <>
       <div className='App'>
           <Header/>
-          <Editor/>
+          <Editor onCreate={onCreate}/>
           <List/>
       </div>
     </>
