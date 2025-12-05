@@ -38,12 +38,22 @@ function App() {
 
     setTodo([newTodo, ...todo])
   }
+
+  const onUpdate =(targetId)=>{
+    // todo state 값 중 isCheck만 변경하면 됨
+    setTodo(todo.map((td)=>{
+      return td.id === targetId 
+        ? {...td, isCheck: !td.isCheck} 
+        : td
+    }))
+  }
+
   return (
     <>
       <div className='App'>
           <Header/>
           <Editor onCreate={onCreate}/>
-          <List todo={todo}/>
+          <List todo={todo} onUpdate={onUpdate}/>
       </div>
     </>
   )
