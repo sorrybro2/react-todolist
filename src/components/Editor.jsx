@@ -1,15 +1,20 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './Editor.css'
 
 const Edit =({ onCreate })=>{
 
-    const [content, setContent] = useState();
+    const [content, setContent] = useState("");
+    const contentRef = useRef();
 
     const toChangeContent =(e)=> {
         setContent(e.target.value)
     }
 
     const toSubmit =()=>{
+        if(content === ""){
+            contentRef.current.focus();
+            return;
+        }
         onCreate(content)
     }
 
@@ -17,6 +22,7 @@ const Edit =({ onCreate })=>{
         <div className="Editor">
             <input 
                 value={content}
+                ref={contentRef}
                 onChange={toChangeContent}
                 placeholder="새로운 todo..."
             />
