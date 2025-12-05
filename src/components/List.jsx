@@ -9,7 +9,7 @@ const List =({todo})=>{
             <div className="todo_wrappers">
                 {todo.map((td)=>{
                     return (
-                        <TodoItem {...td}/>
+                        <TodoItem key={td.id} {...td}/>
                     )
                 })}
             </div>
