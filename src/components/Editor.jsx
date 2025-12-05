@@ -10,12 +10,19 @@ const Edit =({ onCreate })=>{
         setContent(e.target.value)
     }
 
+    const enterSubmit =(e)=>{
+        if(e.keyCode === 13) {
+            toSubmit();
+        }
+    }
+
     const toSubmit =()=>{
         if(content === ""){
             contentRef.current.focus();
             return;
         }
         onCreate(content)
+        setContent("")
     }
 
     return (
@@ -23,6 +30,7 @@ const Edit =({ onCreate })=>{
             <input 
                 value={content}
                 ref={contentRef}
+                onKeyDown={enterSubmit}
                 onChange={toChangeContent}
                 placeholder="새로운 todo..."
             />
