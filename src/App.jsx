@@ -9,19 +9,19 @@ const mockData = [
     id: 0,
     isCheck: false,
     content: "빨래하기",
-    date: new Date().getTime(),
+    date: new Date().toLocaleDateString(),
   },
   {
     id: 1,
     isCheck: false,
     content: "사놓은 인강보기",
-    date: new Date().getTime(),
+    date: new Date().toLocaleDateString(),
   },
   {
     id: 2,
     isCheck: false,
     content: "병원가기",
-    date: new Date().getTime(),
+    date: new Date().toLocaleDateString(),
   },
 ]
 
@@ -33,7 +33,7 @@ function App() {
       id:idRef.current++,
       isCheck: false,
       content: content,
-      date: new Date().getTime()
+      date: new Date().toLocaleDateString()
     }
 
     setTodo([newTodo, ...todo])
@@ -43,7 +43,7 @@ function App() {
       <div className='App'>
           <Header/>
           <Editor onCreate={onCreate}/>
-          <List/>
+          <List todo={todo}/>
       </div>
     </>
   )
